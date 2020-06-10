@@ -8,10 +8,24 @@ require_once('config.php');
 
 //echo json_encode($usuarios);
 
-$teste = new Usuario();
 
-$teste->loadById(4);
+//carrega um usuario pelo id
+//$teste = new Usuario();
+//$teste->loadById(4);
+//echo $teste;
 
-echo $teste;
+//carrega uma lista de usuarios
+//$lista = Usuario::getList();
+//echo json_encode($lista);
+
+
+//carrega uma lista de usuarios pesquisando pelo loguin
+//$search = Usuario::search('t');
+//echo json_encode($search);
+
+$usuario = new Usuario();
+$usuario->login('leoegito','123456');
+
+echo $usuario;
 
 ?>
