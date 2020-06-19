@@ -23,8 +23,51 @@ require_once('config.php');
 //$search = Usuario::search('t');
 //echo json_encode($search);
 
+//carrega login
+//$usuario = new Usuario();
+//$usuario->login('leoegito','123456');
+//echo $usuario;
+
+//$aluno = new Usuario("aluno","123");
+//$aluno->setDeslogin('procedureteste');
+//$aluno->setDessenha('1234');
+
+
+//$aluno->login($aluno->getDeslogin(),$aluno->getDessenha());
+
+//var_dump($aluno);
+
+//--------------------------------------------------------//
+// 				Muito Importante				 		 //
+// O problema o tempo todo estava na procedure,         //
+// pois a mesma usava id_usuario ao inves de           //
+// idusuario. Dessa forma, nao era possivel rea-      //
+// lizar o select no banco de dados, pois a coluna   //
+// nao existia, retornando NULL nos dois campos que //
+// nao haviam sido informados anteriormente pelos  // 
+// setters.										  //
+//-----------------------------------------------//
+
+//Criando novo usuario com insert
+//$aluno = new Usuario("novousuario123","senhadificil123");
+//$aluno->insert();
+
+
+/*  Alterando o banco de dados com UPDATE
+$usuario = new Usuario('teste32','senha32');
+
+$usuario->loadById(34);
+echo "<br><br><br>" .$usuario;
+
+$usuario->update('meufilho','funcionapqp'); 
+echo "<br><br><br>" .$usuario;
+*/
+
 $usuario = new Usuario();
-$usuario->login('leoegito','123456');
+
+$usuario->loadById(7);
+
+$usuario->delete();
 
 echo $usuario;
 
